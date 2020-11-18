@@ -27,7 +27,7 @@ DEBUG = True
 ALLOWED_HOSTS = ['0.0.0.0', '127.0.0.1']
 
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'hungrypy@gmail.com' # sendgrid
+EMAIL_HOST_USER = 'hungrypy@gmail.com'  # sendgrid
 EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASSWORD', 'yourpassword')
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
@@ -52,7 +52,7 @@ INSTALLED_APPS = [
     # third party
     'storages',
 
-    #our apps
+    # our apps
     'accounts',
     'addresses',
     'analytics',
@@ -65,24 +65,20 @@ INSTALLED_APPS = [
     'tags',
 ]
 
-AUTH_USER_MODEL = 'accounts.User' #changes the built-in user model to ours
+AUTH_USER_MODEL = 'accounts.User'  # changes the built-in user model to ours
 LOGIN_URL = '/login/'
 LOGIN_URL_REDIRECT = '/'
 LOGOUT_URL = '/logout/'
 
 FORCE_SESSION_TO_ONE = False
-FORCE_INACTIVE_USER_ENDSESSION= False
-
-
+FORCE_INACTIVE_USER_ENDSESSION = False
 
 MAILCHIMP_API_KEY = os.environ.get("MAILCHIMP_API_KEY")
 MAILCHIMP_DATA_CENTER = "us17"
 MAILCHIMP_EMAIL_LIST_ID = os.environ.get("MAILCHIMP_EMAIL_LIST_ID")
 
-
 STRIPE_SECRET_KEY = os.environ.get("STRIPE_SECRET_KEY", "sk_test_cu1lQmcg1OLffhLvYrSCp5XE")
 STRIPE_PUB_KEY = os.environ.get("STRIPE_PUB_KEY", 'pk_test_PrV61avxnHaWIYZEeiYTTVMZ')
-
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -115,7 +111,6 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'ecommerce.wsgi.application'
 
-
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
@@ -125,7 +120,6 @@ DATABASES = {
         'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
 }
-
 
 # Password validation
 # https://docs.djangoproject.com/en/1.11/ref/settings/#auth-password-validators
@@ -145,20 +139,18 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/1.11/topics/i18n/
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'America/Los_Angeles' #'UTC'
+TIME_ZONE = 'America/Los_Angeles'  # 'UTC'
 
 USE_I18N = True
 
 USE_L10N = True
 
 USE_TZ = True
-
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
@@ -171,27 +163,19 @@ STATICFILES_DIRS = [
 
 STATIC_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_cdn", "static_root")
 
-
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_cdn", "media_root")
-
 
 PROTECTED_ROOT = os.path.join(os.path.dirname(BASE_DIR), "static_cdn", "protected_media")
 
 from ecommerce.aws.conf import *
 
-
-CORS_REPLACE_HTTPS_REFERER      = False
-HOST_SCHEME                     = "http://"
-SECURE_PROXY_SSL_HEADER         = None
-SECURE_SSL_REDIRECT             = False
-SESSION_COOKIE_SECURE           = False
-CSRF_COOKIE_SECURE              = False
-SECURE_HSTS_SECONDS             = None
-SECURE_HSTS_INCLUDE_SUBDOMAINS  = False
-SECURE_FRAME_DENY               = False
-
-
-
-
-
+CORS_REPLACE_HTTPS_REFERER = False
+HOST_SCHEME = "http://"
+SECURE_PROXY_SSL_HEADER = None
+SECURE_SSL_REDIRECT = False
+SESSION_COOKIE_SECURE = False
+CSRF_COOKIE_SECURE = False
+SECURE_HSTS_SECONDS = None
+SECURE_HSTS_INCLUDE_SUBDOMAINS = False
+SECURE_FRAME_DENY = False
